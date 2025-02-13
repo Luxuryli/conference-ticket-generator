@@ -9,19 +9,19 @@ export const eventDetails = {
       id: 1,
       type: "Regular Access",
       limit: 20,
-      price: 0
+      price: 1000
     },
     {
       id: 2,
       type: "VIP Access",
       limit: 20,
-      price: 50
+      price: 10000
     },
     {
       id: 3,
       type: "VVIP Access",
       limit: 20,
-      price: 150
+      price: 100000
     }
   ]
 }
