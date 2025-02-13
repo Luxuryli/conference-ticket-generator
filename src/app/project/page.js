@@ -8,33 +8,29 @@ const ProjectPage = () => {
         <div className="p-6 bg-greenfour rounded-[32px] border border-greenthree">
           <h2 className="text-2xl font-roadrage mb-4">Tech Stack</h2>
           <div className="font-roboto space-y-2">
-            <p>• Next.js 13 with App Router</p>
-            <p>• TailwindCSS for styling</p>
-            <p>• Local Storage for data persistence</p>
-            <p>• QR Code generation</p>
-            <p>• HTML to Image conversion for ticket downloads</p>
+            <p>• Next.js 13 (App Router for modern, optimized routing)</p>
+            <p>• TailwindCSS (Utility-first styling for a sleek UI)</p>
+            <p>• Local Storage (Persistent state management)</p>
+            <p>• QR (For easy ticket verification)</p>
+            <p>• HTML to Image (Enables ticket downloads as images)</p>
           </div>
         </div>
 
         <div className="p-6 bg-greenfour rounded-[32px] border border-greenthree">
           <h2 className="text-2xl font-roadrage mb-4">Key Features</h2>
           <div className="font-roboto space-y-2">
-            <p>• Dynamic ticket generation with QR codes</p>
-            <p>• Responsive design that works on all devices</p>
-            <p>• Ticket management system with search functionality</p>
-            <p>• Downloadable tickets as PNG images</p>
-            <p>• Real-time ticket availability tracking</p>
+            <p>• Dynamic ticket generation Instantly creates personalized tickets with attendee details and QR codes.</p>
+            <p>• Fully Responsive Design to work flawlessly across all screen sizes and devices.</p>
+            <p>• Ticket Management System includes a search function for quick retrieval.</p>
+            <p>• Downloadable Tickets saves your ticket as a high-quality PNG for offline use.</p>
+            <p>• Real-Time Availability Tracking ensures accurate seat selection.</p>
           </div>
         </div>
 
         <div className="p-6 bg-greenfour rounded-[32px] border border-greenthree">
           <h2 className="text-2xl font-roadrage mb-4">Development Process</h2>
           <p className="font-roboto">
-            This project was built as a demonstration of modern web development practices. 
-            The focus was on creating a seamless user experience while maintaining clean, 
-            maintainable code. The ticket design was carefully crafted to be both 
-            visually appealing and functional, with features like QR codes for easy 
-            verification and downloadable formats for user convenience.
+              This project was built with a focus on modern web development best practices. The goal was to create an intuitive and visually appealing experience while maintaining clean, scalable code. The ticket design prioritizes usability, incorporating QR codes for fast verification and a streamlined download feature for convenience.
           </p>
         </div>
       </div>
