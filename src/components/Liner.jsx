@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { toPng } from 'html-to-image';
 
-const Stepper = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelected, setShowTicketErrors }) => {
+const Liner = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelected, setShowTicketErrors }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isDownloading, setIsDownloading] = useState(false);
   const ticketRef = useRef(null);
@@ -176,4 +176,4 @@ const Stepper = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelec
   );
 };
 
-export default Stepper;
+export default Liner;

@@ -1,6 +1,6 @@
 'use client'
 import { useRef, useState } from 'react';
-import Stepper from "@/components/Stepper";
+import Liner from "@/components/Liner";
 import TicketSelection from "@/components/TicketSelection";
 import AttendeeDetails from "@/components/AttendeeDetails";
 import BookedTicket from '@/components/BookedTicket';
@@ -42,7 +42,7 @@ export default function Home() {
 
   return (
       <main className="z-20 relative w-full">
-        <Stepper 
+        <Liner 
           steps={steps} 
           onFormSubmit={handleFormSubmit} 
           canProceed={canProceed} 
