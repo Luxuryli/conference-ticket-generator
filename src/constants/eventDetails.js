@@ -15,7 +15,7 @@ export const eventDetails = {
       id: 2,
       type: "VIP Access",
       limit: 50,
-      price: 5000
+      price: 500
     },
     {
       id: 3,
