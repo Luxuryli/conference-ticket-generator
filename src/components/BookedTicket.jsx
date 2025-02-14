@@ -5,14 +5,14 @@ const BookedTicket = () => {
   const [ticketDetails, setTicketDetails] = useState(null);
 
   useEffect(() => {
-    // Get ticket details first
+
     const details = JSON.parse(localStorage.getItem('ticketDetails') || '{}');
     
     if (Object.keys(details).length > 0) {
       setTicketDetails(details);
 
       const existingTickets = JSON.parse(localStorage.getItem('myTickets') || '[]');
-      // Check if ticket already exists before adding
+
       const ticketExists = existingTickets.some(ticket => 
         ticket.name === details.name && 
         ticket.email === details.email &&

@@ -17,7 +17,7 @@ const Navigation = () => {
   return (
     <header className="flex justify-between items-center w-full px-4 py-2 border rounded-3xl bg-primary/40 h-fit md:h-[76px] border-borderone flex-wrap gap-3">
       <div className="relative">
-        {/* logo and mobile menu trigger */}
+
         <div 
           className="cursor-pointer md:cursor-default"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -25,7 +25,7 @@ const Navigation = () => {
           <Image src="/logo.svg" alt="logo" width={91} height={36} />
         </div>
 
-        {/* Mobile dropdown menu */}
+
         {isMenuOpen && (
           <div className="absolute top-full left-0 mt-2 w-48 bg-primary/95 border border-borderone rounded-xl py-2 md:hidden z-50">
             <ul className="flex flex-col text-subdued">
@@ -45,7 +45,7 @@ const Navigation = () => {
         )}
       </div>
 
-      {/* Desktop menu */}
+
       <div className="hidden md:flex">
         <ul className="flex gap-4 text-subdued text-lg">
           {navLinks.map((link) => (
@@ -61,7 +61,7 @@ const Navigation = () => {
         </ul>
       </div>
 
-      {/* button */}
+
       <Link href="/tickets">
         <button className="bg-white rounded-xl py-4 px-6 text-[#0A0C11] flex gap-2 items-center transition-[gap,colors] duration-300 hover:gap-3 group hover:bg-greenone border border-[#D5EA00]/10 hover:border-[#D9D9D9] hover:text-white h-[52px]">
           <span>MY TICKETS</span>

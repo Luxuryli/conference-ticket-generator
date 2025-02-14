@@ -13,7 +13,7 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
     ticketCount: "",
   });
 
-  // Load from localStorage and calculate tickets left
+
   useEffect(() => {
     const savedTicketDetails = localStorage.getItem("ticketDetails");
     if (savedTicketDetails) {
@@ -22,16 +22,16 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
       setSelectedTicketType(parsedDetails.ticketType);
     }
 
-    // remaining tickets
+
     const myTickets = JSON.parse(localStorage.getItem("myTickets") || "[]");
     const ticketCounts = {};
 
-    // Initialize
+
     eventDetails.ticketTypes.forEach((type) => {
       ticketCounts[type.type] = type.limit;
     });
 
-    // Subtract purchased tickets
+
     myTickets.forEach((ticket) => {
       if (ticketCounts[ticket.ticketType]) {
         ticketCounts[ticket.ticketType] -= ticket.numberOfTickets;
@@ -41,7 +41,7 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
     setTicketsLeft(ticketCounts);
   }, []);
 
-  // Update localStorage real time
+
   const updateLocalStorage = (tickets, ticketType) => {
     const ticketDetails = {
       numberOfTickets: tickets || selectedTickets,
@@ -50,7 +50,7 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
     localStorage.setItem("ticketDetails", JSON.stringify(ticketDetails));
   };
 
-  // Handle ticket select
+
   const handleTicketSelect = (num) => {
     setSelectedTickets(num);
     setErrors((prev) => ({ ...prev, ticketCount: "" }));
@@ -58,16 +58,15 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
     setIsDropdownOpen(false);
   };
 
-  // Handle ticket type select
   const handleTicketTypeSelect = (ticketType) => {
-    // Reset
+
     setSelectedTickets(null);
     setSelectedTicketType(ticketType);
     setErrors((prev) => ({ ...prev, ticketType: "" }));
     updateLocalStorage(null, ticketType);
   };
 
-  // validate and show errors when showErrors is true
+
   useEffect(() => {
     if (showErrors) {
       const savedTicketDetails = JSON.parse(
@@ -107,10 +106,10 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
             {eventDetails.description}
           </p>
           <div className="flex flex-col md:flex-row gap-3 items-center font-roboto">
-            {/* location */}
+
             <p>📍 {eventDetails.location}</p>
             <p className="hidden md:block">||</p>
-            {/* date and time */}
+
             <div className="flex gap-1 items-center">
               <p>{eventDetails.date}</p>
               <p>|</p>
@@ -120,10 +119,10 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
         </div>
       </div>
 
-      {/* Separator */}
+
       <div className="bg-borderthree h-1" />
 
-      {/* Ticket Type Selection */}
+
       <div className="font-roboto">
         <h3 className="mb-3">Select Ticket Type:</h3>
         {showErrors && errors.ticketType && (
@@ -163,7 +162,7 @@ const TicketSelection = ({ setIsTicketSelected, showErrors }) => {
         </div>
       </div>
 
-      {/* Ticket purchase count Dropdown */}
+
       <div className="font-roboto">
         <h3 className="mb-3">Number of Tickets</h3>
         {showErrors && errors.ticketCount && (

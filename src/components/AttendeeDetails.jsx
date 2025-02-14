@@ -13,7 +13,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
     specialRequest: "",
   });
 
-  // Load saved values from localStorage on mount
+
   useEffect(() => {
     const savedDetails = JSON.parse(
       localStorage.getItem("ticketDetails") || "{}",
@@ -50,7 +50,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
       setImageUrl(data.secure_url);
       setFormErrors((prev) => ({ ...prev, photo: "" }));
 
-      // Save photo URL to localStorage
+   
       const existingDetails = JSON.parse(
         localStorage.getItem("ticketDetails") || "{}",
       );
@@ -96,14 +96,15 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
     }
   };
 
-  // Handle name change (checks if the name is empty and sets the error if it is)
+
   const handleNameChange = (e) => {
     const value = e.target.value;
     if (!value.trim()) {
       setFormErrors((prev) => ({ ...prev, name: "Please enter your name" }));
     } else {
       setFormErrors((prev) => ({ ...prev, name: "" }));
-      // Save name to localStorage
+
+
       const existingDetails = JSON.parse(
         localStorage.getItem("ticketDetails") || "{}",
       );
@@ -130,7 +131,8 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
       }));
     } else {
       setFormErrors((prev) => ({ ...prev, email: "" }));
-      // Save email to localStorage
+
+
       const existingDetails = JSON.parse(
         localStorage.getItem("ticketDetails") || "{}",
       );
@@ -144,7 +146,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
     }
   };
 
-  // Handle special request change
+
   const handleSpecialRequestChange = (e) => {
     const value = e.target.value;
     if (value.length > 500) {
@@ -167,7 +169,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
     }
   };
 
-  // Handle submit (checks if the image, name, and email are valid and saves the data to local storage)
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let hasErrors = false;
@@ -203,7 +205,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
         specialRequest: e.target.specialRequest.value.trim() || "No request",
       };
 
-      // Get existing ticket details and merge with attendee data
+
       const existingDetails = JSON.parse(
         localStorage.getItem("ticketDetails") || "{}",
       );
@@ -212,7 +214,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
         ...attendeeData,
       };
 
-      // Save updated details back to localStorage
+
       localStorage.setItem("ticketDetails", JSON.stringify(updatedDetails));
 
       onSubmit({
@@ -223,7 +225,6 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
     }
   };
 
-  // Handle key press (opens the file input when the user presses enter or space) - accessibility
   const handleKeyPress = (e) => {
     if (e.key === "Enter" || e.key === " ") {
       handleClick();
@@ -233,7 +234,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
   return (
     <div className="space-y-8 w-full font-roboto" role="main">
       <form className="space-y-8" onSubmit={handleSubmit} ref={ref} noValidate>
-        {/* Upload Profile Photo */}
+
         <div className="border border-borderthree bg-greenfive rounded-3xl p-6 pb-14 w-full relative">
           <h3 className="mb-10" id="upload-section">
             Upload Profile Photo
@@ -323,11 +324,10 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
           )}
         </div>
 
-        {/* Separator */}
+
         <div className="bg-borderthree h-1" role="separator" />
 
-        {/* Attendee Details */}
-        {/* Name */}
+
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-lightgrey">
             Enter your name <span aria-label="required">*</span>
@@ -349,7 +349,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
             </span>
           )}
         </div>
-        {/* Email */}
+
         <div className="flex flex-col gap-2">
           <label htmlFor="email" className="text-lightgrey">
             Enter your email <span aria-label="required">*</span>
@@ -386,7 +386,7 @@ const AttendeeDetails = forwardRef(({ onSubmit }, ref) => {
             </span>
           )}
         </div>
-        {/* Special request */}
+
         <div className="flex flex-col gap-2">
           <label htmlFor="specialRequest" className="text-lightgrey">
             Special request

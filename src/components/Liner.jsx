@@ -16,7 +16,7 @@ const Liner = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelecte
       const element = ticketRef.current;
       if (!element) return;
 
-      // Remove hover effects temporarily
+
       element.style.transform = 'none';
       
       const dataUrl = await toPng(element, {
@@ -29,10 +29,10 @@ const Liner = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelecte
         }
       });
 
-      // Restore hover effects
+
       element.style.transform = '';
 
-      // Create download link
+ 
       const link = document.createElement('a');
       const ticketDetails = JSON.parse(localStorage.getItem('ticketDetails') || '{}');
       link.download = `ticket-${ticketDetails.name || 'event'}.png`;
@@ -107,7 +107,8 @@ const Liner = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelecte
             </button>
           </div>
         );
-      // step 3
+
+
       case 2:
         return (
           <div className="flex flex-col-reverse md:flex-row gap-3 mt-8">
@@ -142,7 +143,7 @@ const Liner = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelecte
         </span>
       </div>
 
-      {/* Progress bar */}
+
       <div className="w-full h-1 bg-greenthree rounded-full mb-8">
         <div 
           className="h-full bg-greenone rounded-full transition-all duration-300 ease-in-out"
@@ -150,7 +151,6 @@ const Liner = ({ steps, onFormSubmit, canProceed, setCanProceed, isTicketSelecte
         />
       </div>
 
-      {/* Step content */}
       {currentStep === 2 ? (
         <div className="mt-6">
           <div className='text-center font-roboto'>
